@@ -1,0 +1,10 @@
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\bin\Debug\hotelApp.exe.config
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\bin\Debug\hotelApp.exe
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\bin\Debug\hotelApp.pdb
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.csprojAssemblyReference.cache
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.Form1.resources
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.Properties.Resources.resources
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.csproj.GenerateResource.cache
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.csproj.CoreCompileInputs.cache
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.exe
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.pdb
