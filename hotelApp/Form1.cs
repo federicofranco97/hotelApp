@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -13,14 +14,13 @@ namespace hotelApp
             InitializeComponent();
             CenterToScreen();
             asignarTablaCuartos();
+            asignarTablaClientes();
             llenarIDS();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String query2 = "select * from cuarto";
-            String []data=db.query4Columnas(query2).Split('\n');
-            MessageBox.Show(data[0]);
+            nuevoForm();
         }
 
         public void llenarIDS()
@@ -33,6 +33,11 @@ namespace hotelApp
             }
         }
 
+        public void nuevoForm()
+        {
+            
+        }
+
         public void asignarTablaCuartos()
         {
             listCuartos.View = View.Details;
@@ -43,6 +48,22 @@ namespace hotelApp
                 if (aux.Length == 1) return;
                 ListViewItem item = new ListViewItem(new[] { aux[0], aux[1], aux[2], aux[3] });
                 listCuartos.Items.Add(item);
+
+            }
+        }
+
+        public void asignarTablaClientes()
+        {
+            listClientes.View = View.Details;
+            String query2 = "select id,nombre from cliente";
+            String[] data = db.query2Columnas(query2).Split('\n');
+            for (int i = 1; i < data.Length; i++)
+            {
+                String[] aux = data[i].Split('_');
+                String[] aux2 = aux[0].Split(' ');
+                if (aux2.Length == 1) return;
+                ListViewItem item = new ListViewItem(new[] { aux2[0], aux2[1]});
+                listClientes.Items.Add(item);
 
             }
         }
@@ -85,6 +106,39 @@ namespace hotelApp
                 MessageBox.Show("El cuarto no se encuentra Libre!","Error");
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String nombre;
+            while (!validarNombreCliente(nombre=Interaction.InputBox("Ingrese el nombre del cliente")))
+            {
+                MessageBox.Show("Nombre ingresado invalido!");
+            }
+            String query = "insert into cliente(nombre,operacion) values('"+nombre+"','vacio')";
+            db.querySinRespuesta(query);
+            MessageBox.Show("Usuario Añadido exitosamente!");
+            listClientes.Items.Clear();
+            asignarTablaClientes();
+        }
+
+        public Boolean validarNombreCliente(String nombre)
+        {
+            if(nombre.Equals("") || nombre.Equals(" ") || nombre == null)
+            {
+                return false;
+            }
+            try
+            {
+                Convert.ToDouble(nombre[0]);
+                return false;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Entro");
+            }
+            
+            return true;
         }
     }
 }

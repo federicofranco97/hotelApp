@@ -8,3 +8,4 @@ C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.c
 C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.csproj.CoreCompileInputs.cache
 C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.exe
 C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.pdb
+C:\Users\Fede\Documents\ReposVisualStudio\hotelApp\hotelApp\obj\Debug\hotelApp.Form2.resources
