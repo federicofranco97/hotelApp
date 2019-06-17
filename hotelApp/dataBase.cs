@@ -94,7 +94,7 @@ namespace hotelApp
                 {
                     while (reader.Read())
                     {
-                        resultado += reader.GetValue(0);
+                        resultado += reader.GetValue(0)+" ";
 
                     }
                 }

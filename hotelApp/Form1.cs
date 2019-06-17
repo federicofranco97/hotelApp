@@ -8,7 +8,7 @@ namespace hotelApp
     public partial class Form1 : Form
     {
         dataBase db = new dataBase();
-        List<char> listIDS = new List<char>();
+        List<String> listIDS = new List<String>();
         public Form1()
         {
             InitializeComponent();
@@ -26,10 +26,11 @@ namespace hotelApp
         public void llenarIDS()
         {
             String query = "select id from cliente where id<>0";
-            String data = db.query1Columna(query);
-            foreach (char c in data)
+            String []data = db.query1Columna(query).Split(' ');
+            foreach (String c in data)
             {
                 listIDS.Add(c);
+                Console.WriteLine(c);
             }
         }
 
@@ -50,6 +51,7 @@ namespace hotelApp
                 listCuartos.Items.Add(item);
 
             }
+            listCuartos.Select();
         }
 
         public void asignarTablaClientes()
@@ -89,13 +91,30 @@ namespace hotelApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int numero = Convert.ToInt32(listCuartos.SelectedItems[0].SubItems[0].Text);
-            String estado = listCuartos.SelectedItems[0].SubItems[2].Text.Replace(" ","");
-            String idcl;
-            //while()
+            int numero;
+            try
+            {
+                numero = Convert.ToInt32(listCuartos.SelectedItems[0].SubItems[0].Text);
+            }catch(Exception a)
+            {
+                MessageBox.Show("No hay ningun cuarto seleccionado!", "Error");
+                return;
+            }
+            if (listCuartos.SelectedItems[0].SubItems[0] == null)
+            {
+                MessageBox.Show("Primero selecciona un cuarto!","Error");
+                return;
+            }
+            String idcl="";
+            while(!validarID(idcl=(Interaction.InputBox("Ingrese el id del cliente")))){
+                MessageBox.Show("El numero ingresado no es valido","Error");
+            }
+            if (idcl.Equals("")) return;
+            Double id = Convert.ToDouble(idcl);
+            String estado = listCuartos.SelectedItems[0].SubItems[2].Text.Replace(" ", "");
             if (estado.Equals("libre"))
             {
-                String query = "update Cuarto set desc_estado='ocupado' where numero="+numero;
+                String query = "update Cuarto set desc_estado='ocupado',id_cliente="+id+" where numero="+numero;
                 db.querySinRespuesta(query);
                 MessageBox.Show("Cuarto tomado exitosamente!","Info");
                 listCuartos.Items.Clear();
@@ -105,7 +124,16 @@ namespace hotelApp
             {
                 MessageBox.Show("El cuarto no se encuentra Libre!","Error");
             }
+            
+        }
 
+        public Boolean validarID(String id)
+        {
+            if (listIDS.IndexOf(id) != -1)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -118,6 +146,13 @@ namespace hotelApp
             String query = "insert into cliente(nombre,operacion) values('"+nombre+"','vacio')";
             db.querySinRespuesta(query);
             MessageBox.Show("Usuario Añadido exitosamente!");
+            actualizarClientes();
+        }
+
+        public void actualizarClientes()
+        {
+            listIDS.Clear();
+            llenarIDS();
             listClientes.Items.Clear();
             asignarTablaClientes();
         }

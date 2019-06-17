@@ -39,11 +39,11 @@
             this.IDCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.listClientes = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
@@ -71,7 +71,7 @@
             this.tabPrincipal.Controls.Add(this.button1);
             this.tabPrincipal.Location = new System.Drawing.Point(4, 22);
             this.tabPrincipal.Name = "tabPrincipal";
-            this.tabPrincipal.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPrincipal.Padding = new System.Windows.Forms.Padding(3);
             this.tabPrincipal.Size = new System.Drawing.Size(799, 425);
             this.tabPrincipal.TabIndex = 0;
             this.tabPrincipal.Text = "Principal";
@@ -80,7 +80,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(593, 205);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 31);
             this.button2.TabIndex = 4;
@@ -108,7 +108,7 @@
             this.IDCliente});
             this.listCuartos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listCuartos.Location = new System.Drawing.Point(55, 110);
-            this.listCuartos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listCuartos.Margin = new System.Windows.Forms.Padding(2);
             this.listCuartos.Name = "listCuartos";
             this.listCuartos.Size = new System.Drawing.Size(357, 254);
             this.listCuartos.TabIndex = 2;
@@ -136,7 +136,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(593, 149);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 31);
             this.button1.TabIndex = 0;
@@ -157,15 +157,15 @@
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // label3
             // 
-            this.button3.Location = new System.Drawing.Point(514, 161);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 44);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Agregar Cliente";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(289, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Lista de Clientes";
             // 
             // listClientes
             // 
@@ -174,7 +174,7 @@
             this.columnHeader2});
             this.listClientes.Location = new System.Drawing.Point(282, 98);
             this.listClientes.Name = "listClientes";
-            this.listClientes.Size = new System.Drawing.Size(153, 279);
+            this.listClientes.Size = new System.Drawing.Size(164, 279);
             this.listClientes.TabIndex = 3;
             this.listClientes.UseCompatibleStateImageBehavior = false;
             // 
@@ -187,15 +187,15 @@
             this.columnHeader2.Text = "Nombre Cliente";
             this.columnHeader2.Width = 90;
             // 
-            // label3
+            // button3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(289, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Lista de Clientes";
+            this.button3.Location = new System.Drawing.Point(514, 161);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(112, 44);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Agregar Cliente";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tabPage2
             // 
