@@ -172,9 +172,9 @@
             this.listClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listClientes.Location = new System.Drawing.Point(270, 99);
+            this.listClientes.Location = new System.Drawing.Point(282, 98);
             this.listClientes.Name = "listClientes";
-            this.listClientes.Size = new System.Drawing.Size(180, 279);
+            this.listClientes.Size = new System.Drawing.Size(153, 279);
             this.listClientes.TabIndex = 3;
             this.listClientes.UseCompatibleStateImageBehavior = false;
             // 
@@ -185,6 +185,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nombre Cliente";
+            this.columnHeader2.Width = 90;
             // 
             // label3
             // 

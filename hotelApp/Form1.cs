@@ -128,14 +128,9 @@ namespace hotelApp
             {
                 return false;
             }
-            try
+            if (Char.IsDigit(nombre[0]))
             {
-                Convert.ToDouble(nombre[0]);
                 return false;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Entro");
             }
             
             return true;
